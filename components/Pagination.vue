@@ -1,5 +1,5 @@
 <template>
-  <Paginate
+  <paginate
     :page-count="totalPages"
     :click-handler="gotoPage"
     prev-text="Previous"
@@ -13,13 +13,8 @@
 </template>
 
 <script>
-import VuejsPaginate from 'vuejs-paginate'
-
 export default {
   name: 'Pagination',
-  components: {
-    Paginate: VuejsPaginate
-  },
   props: {
     totalPages: {
       type: Number,

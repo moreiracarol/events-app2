@@ -10,11 +10,11 @@
         data-card
       />
       <!--      TODO: add Pagination component -->
-      <!--      <Pagination-->
-      <!--        v-if="showPagination"-->
-      <!--        :total-pages="totalPages"-->
-      <!--        @click="gotoPage"-->
-      <!--      />-->
+      <Pagination
+        v-if="showPagination"
+        :total-pages="totalPages"
+        @click="gotoPage"
+      />
     </div>
   </div>
 </template>
@@ -23,14 +23,14 @@
 import { mapActions, mapGetters } from 'vuex'
 import { SORT_OPTIONS } from '@/utils/constants'
 import Card from '@/components/Card'
-// import Pagination from '@/components/Pagination'
+import Pagination from '@/components/Pagination'
 import SortBy from '@/components/SortBy'
 
 export default {
   name: 'EventsList',
   components: {
     SortBy,
-    // Pagination,
+    Pagination,
     Card
   },
   props: {
