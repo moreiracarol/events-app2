@@ -29,7 +29,9 @@ export default {
    */
   plugins: [
     { src: '~/plugins/vuex-persist', ssr: false },
-    { src: '~/plugins/vuejs-paginate', mode: 'client' }
+    { src: '~/plugins/vuejs-paginate', mode: 'client' },
+    { src: '~/plugins/amplify', mode: 'client' },
+    { src: '~/plugins/auth' }
   ],
   /*
    ** Nuxt.js dev-modules

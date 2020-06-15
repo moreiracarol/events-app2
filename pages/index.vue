@@ -1,14 +1,18 @@
 <template>
   <div class="container">
-    <events />
+    <div v-if="!$auth.isAuthenticated">
+      <nuxt-link to="/login">Login</nuxt-link>
+      <nuxt-link to="/register">Register</nuxt-link>
+    </div>
+    <div v-else>
+      <p>You're logged as {{ $auth.email }}</p>
+      <button @click="$store.dispatch('auth/logout')">Logout</button>
+    </div>
   </div>
 </template>
 
 <script>
-import Events from '@/pages/Events'
-export default {
-  components: { Events }
-}
+export default {}
 </script>
 
 <style>
