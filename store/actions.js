@@ -24,5 +24,6 @@ export default {
   getFavorites: (context) => {
     const events = context.getters.favorites
     context.commit('saveEvents', events)
-  }
+  },
+  nuxtServerInit() {}
 }

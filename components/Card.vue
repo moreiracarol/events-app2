@@ -59,7 +59,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../styles/events-app';
+@import '@/styles/events-app';
 
 .card {
   background: $color2;

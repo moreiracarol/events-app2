@@ -27,7 +27,12 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~/plugins/vuex-persist', ssr: false }],
+  plugins: [
+    { src: '~/plugins/vuex-persist', ssr: false },
+    { src: '~/plugins/vuejs-paginate', mode: 'client' },
+    { src: '~/plugins/amplify', mode: 'client' },
+    { src: '~/plugins/auth' }
+  ],
   /*
    ** Nuxt.js dev-modules
    */

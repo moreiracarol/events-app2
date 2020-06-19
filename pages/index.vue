@@ -1,13 +1,21 @@
 <template>
   <div class="container">
-    <events />
+    <div v-if="!$auth.isAuthenticated">
+      <nuxt-link to="/login">Login</nuxt-link>
+      <nuxt-link to="/register">Register</nuxt-link>
+    </div>
   </div>
 </template>
 
 <script>
-import Events from '@/pages/Events'
+import { EVENTS_ROUTE } from '@/utils/constants'
+
 export default {
-  components: { Events }
+  created() {
+    if (this.$auth.isAuthenticated) {
+      this.$router.push(EVENTS_ROUTE)
+    }
+  }
 }
 </script>
 

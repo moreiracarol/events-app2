@@ -16,8 +16,5 @@ export default {
           state &&
           state.favorites &&
           state.favorites.filter((item) => item.id !== event.id))
-  },
-  saveAuthentication(state, auth) {
-    state.authenticated = auth
   }
 }

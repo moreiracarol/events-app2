@@ -1,4 +1,4 @@
-import { EVENTS_PATH } from '@/utils/constants'
+import { EVENTS_ROUTE } from '@/utils/constants'
 
 export const getEventsList = (eventsList) => {
   let event = {}
@@ -24,7 +24,7 @@ export const getPrice = (item) => {
 }
 
 export const isEventsPage = (path) => {
-  return path === EVENTS_PATH
+  return path === EVENTS_ROUTE
 }
 
 export const getImageContext = (icon) => {
