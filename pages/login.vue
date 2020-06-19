@@ -21,12 +21,14 @@
     </div>
     <div v-else>
       <p>You're logged as {{ $auth.email }}</p>
-      <button @click="$store.dispatch('auth/logout')">Logout</button>
+      <button @click="logout">Logout</button>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'Login',
   data: () => ({
@@ -34,12 +36,16 @@ export default {
     password: ''
   }),
   methods: {
+    ...mapActions({
+      authLogin: 'auth/login',
+      authLogout: 'auth/logout'
+    }),
     async login() {
-      await this.$store.dispatch('auth/login', {
-        email: this.email,
-        password: this.password
-      })
+      await this.authLogin({ email: this.email, password: this.password })
       this.$router.push('/events')
+    },
+    logout() {
+      this.authLogout()
     }
   }
 }

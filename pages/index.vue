@@ -6,13 +6,24 @@
     </div>
     <div v-else>
       <p>You're logged as {{ $auth.email }}</p>
-      <button @click="$store.dispatch('auth/logout')">Logout</button>
+      <button @click="logout">Logout</button>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import { mapActions } from 'vuex'
+
+export default {
+  methods: {
+    ...mapActions({
+      authLogout: 'auth/logout'
+    }),
+    logout() {
+      this.authLogout()
+    }
+  }
+}
 </script>
 
 <style>

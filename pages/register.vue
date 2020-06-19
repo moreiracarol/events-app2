@@ -37,6 +37,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 const steps = {
   register: 'REGISTER',
   confirm: 'CONFIRM'
@@ -57,23 +59,20 @@ export default {
     }
   }),
   methods: {
+    ...mapActions({
+      authRegister: 'auth/register',
+      authConfirmRegistration: 'auth/confirmRegistration',
+      authLogin: 'auth/login'
+    }),
     async register() {
-      try {
-        await this.$store.dispatch('auth/register', this.registerForm)
-        this.confirmForm.email = this.registerForm.email
-        this.step = this.steps.confirm
-      } catch (e) {
-        console.log(e)
-      }
+      await this.authRegister(this.registerForm)
+      this.confirmForm.email = this.registerForm.email
+      this.step = this.steps.confirm
     },
     async confirm() {
-      try {
-        await this.$store.dispatch('auth/confirmRegistration', this.confirmForm)
-        await this.$store.dispatch('auth/login', this.registerForm)
-        this.$router.push('/events')
-      } catch (e) {
-        console.log(e)
-      }
+      await this.authConfirmRegistration(this.confirmForm)
+      await this.authLogin(this.registerForm)
+      this.$router.push('/events')
     }
   }
 }

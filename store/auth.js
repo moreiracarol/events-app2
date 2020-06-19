@@ -23,19 +23,25 @@ export const actions = {
     }
   },
   async register(_, { email, password }) {
-    const user = await Auth.signUp({
-      username: email,
-      password
-    })
-    return user
+    try {
+      await Auth.signUp({
+        username: email,
+        password
+      })
+    } catch (e) {
+      console.log(e)
+    }
   },
   async confirmRegistration(_, { email, code }) {
-    return await Auth.confirmSignUp(email, code)
+    try {
+      await Auth.confirmSignUp(email, code)
+    } catch (e) {
+      console.log(e)
+    }
   },
   async login({ commit }, { email, password }) {
     const user = await Auth.signIn(email, password)
     commit('setUser', user)
-    return user
   },
   async logout({ commit }) {
     await Auth.signOut()
