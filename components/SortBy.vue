@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../styles/events-app';
+@import '@/styles/events-app';
 .sort-by {
   display: flex;
   justify-content: flex-end;

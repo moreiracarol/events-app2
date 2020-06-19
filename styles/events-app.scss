@@ -24,14 +24,18 @@ input {
   font-size: 16px;
 }
 
-.primary-button {
-  color: $color6;
+button {
   border: transparent;
   padding: 8px 16px;
   font-size: 16px;
   border-radius: 6px;
   font-weight: 600;
   display: flex;
+  width: fit-content;
+}
+
+.primary-button {
+  color: $color6;
 
   &:hover {
     cursor: pointer;
@@ -43,13 +47,12 @@ input {
   }
 }
 
-/* Amplify component styles */
-.Section__sectionBody___3DCrX {
-  display: flex;
-  flex-direction: column;
-}
+.highlight-button {
+  background-color: $color4;
+  color: $color1;
 
-div[signupfield="password"],
-div[signupfield="phone_number"] {
-  order: 1;
+  &:hover {
+    cursor: pointer;
+    background-color: $color6;
+  }
 }

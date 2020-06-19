@@ -8,7 +8,7 @@
 .
 <script>
 import EventsList from '@/components/EventsList'
-import { FAVORITES_PATH } from '@/utils/constants'
+import { FAVORITES_ROUTE } from '@/utils/constants'
 import ViewLayout from '@/layouts/viewLayout'
 
 export default {
@@ -16,12 +16,12 @@ export default {
   components: { ViewLayout, EventsList },
   methods: {
     goToFavorites() {
-      this.$router.push(FAVORITES_PATH)
+      this.$router.push(FAVORITES_ROUTE)
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-@import '../styles/events-app';
+@import '@/styles/events-app';
 </style>

@@ -4,23 +4,16 @@
       <nuxt-link to="/login">Login</nuxt-link>
       <nuxt-link to="/register">Register</nuxt-link>
     </div>
-    <div v-else>
-      <p>You're logged as {{ $auth.email }}</p>
-      <button @click="logout">Logout</button>
-    </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { EVENTS_ROUTE } from '@/utils/constants'
 
 export default {
-  methods: {
-    ...mapActions({
-      authLogout: 'auth/logout'
-    }),
-    logout() {
-      this.authLogout()
+  created() {
+    if (this.$auth.isAuthenticated) {
+      this.$router.push(EVENTS_ROUTE)
     }
   }
 }

@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../styles/events-app';
+@import '@/styles/events-app';
 
 .pagination {
   list-style-type: none;

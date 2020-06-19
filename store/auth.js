@@ -8,7 +8,6 @@ export const state = () => ({
 export const mutations = {
   setUser(state, user) {
     state.isAuthenticated = !!user
-    state.user = user
   }
 }
 
