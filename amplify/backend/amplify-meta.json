@@ -1,0 +1,63 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-events-app2-evtenvtwo-155029-authRole",
+            "UnauthRoleArn": "arn:aws:iam::778756712799:role/amplify-events-app2-evtenvtwo-155029-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::778756712799:role/amplify-events-app2-evtenvtwo-155029-authRole",
+            "Region": "eu-central-1",
+            "DeploymentBucketName": "amplify-events-app2-evtenvtwo-155029-deployment",
+            "UnauthRoleName": "amplify-events-app2-evtenvtwo-155029-unauthRole",
+            "StackName": "amplify-events-app2-evtenvtwo-155029",
+            "StackId": "arn:aws:cloudformation:eu-central-1:778756712799:stack/amplify-events-app2-evtenvtwo-155029/88617340-a733-11ea-8c56-0a3417f4b6e8",
+            "AmplifyAppId": "d215xur9j08woi"
+        }
+    },
+    "auth": {
+        "eventsapp219b400ba": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": [],
+            "customAuth": false,
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/amplify-events-app2-evtenvtwo-155029-deployment/amplify-cfn-templates/auth/eventsapp219b400ba-cloudformation-template.yml",
+                "logicalId": "autheventsapp219b400ba"
+            },
+            "lastPushTimeStamp": "2020-06-26T08:54:08.268Z",
+            "output": {
+                "AppClientSecret": "19m11irlqln9nel6q77ttmp73di7sr7rl04sd5jsputm9ikbhnsd",
+                "UserPoolId": "eu-central-1_0kaMdQISI",
+                "AppClientIDWeb": "5pv80jc363tnh04h9j3odakh9m",
+                "AppClientID": "467m3rjoc03uvddgicentmugj2",
+                "IdentityPoolId": "eu-central-1:c113e57a-418e-4871-b294-d32eab035fa8",
+                "IdentityPoolName": "eventsapp219b400ba_identitypool_19b400ba__evtenvtwo",
+                "UserPoolName": "eventsapp219b400ba_userpool_19b400ba"
+            },
+            "lastPushDirHash": "v6B+qXIZXCFDi7E1IPDr13FT+0o="
+        },
+        "userPoolGroups": {
+            "service": "Cognito-UserPool-Groups",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": [
+                {
+                    "category": "auth",
+                    "resourceName": "eventsapp219b400ba",
+                    "attributes": [
+                        "UserPoolId",
+                        "AppClientIDWeb",
+                        "AppClientID",
+                        "IdentityPoolId"
+                    ]
+                }
+            ],
+            "lastPushTimeStamp": "2020-06-26T08:54:08.269Z",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/amplify-events-app2-evtenvtwo-155029-deployment/amplify-cfn-templates/auth/template.json",
+                "logicalId": "authuserPoolGroups"
+            },
+            "output": {
+                "eventsappnuxtGroupRole": "arn:aws:iam::778756712799:role/eu-central-1_0kaMdQISI-eventsappnuxtGroupRole"
+            },
+            "lastPushDirHash": "EGb53kWZHIOWCdAGHmSuA8l4/to="
+        }
+    }
+}
