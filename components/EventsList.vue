@@ -9,7 +9,6 @@
         :event="event"
         data-card
       />
-      <!--      TODO: add Pagination component -->
       <Pagination
         v-if="showPagination"
         :total-pages="totalPages"

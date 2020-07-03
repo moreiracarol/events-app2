@@ -38,7 +38,7 @@ export default {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  color: $color6;
+  color: $color-secondary;
   padding: 0;
   font-weight: 600;
   margin: 48px 12px;
@@ -50,7 +50,7 @@ export default {
 
   .active,
   &__item:hover {
-    background-color: $color6;
+    background-color: $color-secondary;
     color: $color2;
   }
 
@@ -64,7 +64,7 @@ export default {
 
 .active,
 .pagination__item:hover {
-  background-color: $color6;
+  background-color: $color-secondary;
   color: $color2;
 }
 </style>

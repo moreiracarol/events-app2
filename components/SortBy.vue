@@ -1,20 +1,10 @@
 <template>
   <div class="sort-by">
-    <span class="sort-by__title">Sort by</span>
-    <select
-      id="orderBy"
-      v-model="sort"
-      data-sort-select
-      @change="sortEvents(sort)"
-    >
-      <option
-        v-for="(option, index) in sortOptions"
-        :key="index"
-        :value="option.value"
-        data-sort-options
-        v-text="option.text"
-      />
-    </select>
+    <b-form-select
+      v-model="selected"
+      :options="options"
+      @change="sortEvents(selected)"
+    />
   </div>
 </template>
 
@@ -24,13 +14,13 @@ export default {
   name: 'SortBy',
   data() {
     return {
-      sort: '',
-      sortOptions: SORT_OPTIONS
+      selected: null,
+      options: SORT_OPTIONS
     }
   },
   methods: {
-    sortEvents(sort) {
-      this.$emit('sortEvents', sort)
+    sortEvents(selected) {
+      this.$emit('sortEvents', selected)
     }
   }
 }
@@ -39,28 +29,8 @@ export default {
 <style scoped lang="scss">
 @import '@/styles/events-app';
 .sort-by {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  font-size: 12px;
-  padding: 0 8px 16px;
-  color: $color6;
-
-  &__title {
-    padding-right: 8px;
-  }
-
-  #orderBy {
-    height: 30px;
-    width: 120px;
-    background: $color2;
-    color: $color6;
-
-    &:hover {
-      border: solid 1px $color6;
-      background: $color1;
-      cursor: pointer;
-    }
-  }
+  max-width: 240px;
+  padding: 16px 0;
+  color: $color-secondary;
 }
 </style>

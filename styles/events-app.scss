@@ -1,58 +1,32 @@
+$color-primary: #49c5b6;
+$color-secondary: #0e1574;
 $color1: #fff;
-$color2: #f4f4f4;
+$color2: #f4f7f6;
 $color3: #a6a6a6;
-$color4: #ff8c30;
-$color5: #747474;
-$color6: #0e1574;
+$color4: #747474;
 
 $max-content-size: 948px;
-
-$card-image-height: 120px;
 
 $breakpoint-tablet: 768px;
 
 h1 {
   font-size: 48px;
-  font-weight: 900;
-  color: $color6;
+  font-weight: 600;
+  color: $color-secondary;
   margin: 16px 8px;
 }
 
 input {
   padding: 12px;
   margin: 8px 0;
-  font-size: 16px;
 }
 
-button {
-  border: transparent;
-  padding: 8px 16px;
-  font-size: 16px;
-  border-radius: 6px;
-  font-weight: 600;
-  display: flex;
-  width: fit-content;
+.btn-primary {
+  background: $color-primary;
+  border-color: $color-primary;
 }
 
-.primary-button {
-  color: $color6;
-
-  &:hover {
-    cursor: pointer;
-    color: $color4;
-  }
-
-  &:focus {
-    outline: 0;
-  }
-}
-
-.highlight-button {
-  background-color: $color4;
-  color: $color1;
-
-  &:hover {
-    cursor: pointer;
-    background-color: $color6;
-  }
+.btn-secondary {
+  background: $color-secondary;
+  border-color: $color-secondary;
 }

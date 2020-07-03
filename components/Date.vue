@@ -36,14 +36,14 @@ export default {
 @import '@/styles/events-app';
 
 .date {
-  color: $color4;
+  color: $color-primary;
   font-weight: 600;
   padding: 4px;
   font-size: 12px;
 
   @media (min-width: $breakpoint-tablet) {
     font-size: 16px;
-    padding: 8px;
+    padding: 8px 0;
   }
 }
 </style>

@@ -1,43 +1,36 @@
 <template>
   <div class="register">
     <h1>Register</h1>
-    <form
-      class="register__form"
+    <b-form
       v-if="step === steps.register"
+      class="register__form"
       @submit.prevent="register"
     >
-      <input
+      <b-form-input
         v-model="registerForm.email"
         type="email"
         placeholder="Email"
-        class="form-control"
       />
-      <input
+      <b-form-input
         v-model="registerForm.password"
         type="password"
         placeholder="Password"
-        class="form-control"
       />
-      <button type="submit" class="highlight-button">Register</button>
-    </form>
-    <form
-      class="register__form"
+      <b-button type="submit" variant="primary">Register</b-button>
+    </b-form>
+    <b-form
       v-if="step === steps.confirm"
+      class="register__form"
       @submit.prevent="confirm"
     >
-      <input
+      <b-form-input
         v-model="confirmForm.email"
         type="email"
         placeholder="Email"
-        class="form-control"
       />
-      <input
-        v-model="confirmForm.code"
-        placeholder="Code"
-        class="form-control"
-      />
-      <button type="submit" class="highlight-button">Confirm</button>
-    </form>
+      <b-form-input v-model="confirmForm.code" placeholder="Code" />
+      <b-button type="submit" variant="primary">Confirm</b-button>
+    </b-form>
     <nuxt-link to="login">Have an account? Login</nuxt-link>
   </div>
 </template>
@@ -52,7 +45,7 @@ const steps = {
 }
 
 export default {
-  name: 'register',
+  name: 'Register',
   data: () => ({
     steps: { ...steps },
     step: steps.register,
@@ -97,9 +90,7 @@ export default {
   margin: auto;
 
   &__form {
-    margin: 24px 0;
-    display: flex;
-    flex-direction: column;
+    margin: 16px 0;
   }
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
   <div class="login">
     <h1>Login</h1>
-    <form class="login__form" @submit.prevent="login">
-      <input v-model="email" type="email" placeholder="Email" />
-      <input v-model="password" type="password" placeholder="Password" />
-      <button type="submit" class="highlight-button">Login</button>
-    </form>
+    <b-form class="login__form" @submit.prevent="login">
+      <b-form-input v-model="email" type="email" placeholder="Email" />
+      <b-form-input v-model="password" type="password" placeholder="Password" />
+      <b-button type="submit" variant="primary">Login</b-button>
+    </b-form>
     <nuxt-link to="/register">Don't have an account? Create</nuxt-link>
   </div>
 </template>
@@ -44,9 +44,7 @@ export default {
   margin: auto;
 
   &__form {
-    margin: 24px 0;
-    display: flex;
-    flex-direction: column;
+    margin: 16px 0;
   }
 }
 </style>
