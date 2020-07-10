@@ -9,7 +9,6 @@
         :event="event"
         data-card
       />
-      <!--      TODO: add Pagination component -->
       <Pagination
         v-if="showPagination"
         :total-pages="totalPages"
@@ -87,7 +86,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/styles/events-app';
 .events-list {
   display: flex;
   flex-direction: column;

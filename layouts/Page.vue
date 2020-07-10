@@ -2,12 +2,14 @@
   <div class="view-layout">
     <div class="view-layout__header">
       <h1 data-events-title>{{ pageTitle }}</h1>
-      <button class="highlight-button" @click="logout">Logout</button>
+      <b-button variant="primary" @click="logout">Logout</b-button>
     </div>
-    <button class="primary-button" data-favorites-button @click="goToPage">
-      {{ button }}
-    </button>
-    <slot name="content" />
+    <div class="view-layout__body">
+      <b-button variant="secondary" data-favorites-button @click="goToPage">
+        {{ buttonLabel }}
+      </b-button>
+      <slot name="content" />
+    </div>
   </div>
 </template>
 
@@ -22,7 +24,7 @@ export default {
       type: String,
       required: true
     },
-    button: {
+    buttonLabel: {
       type: String,
       required: true
     }
@@ -47,12 +49,25 @@ export default {
 .view-layout {
   max-width: $max-content-size;
   margin: 24px auto;
+  padding: 8px;
 
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 24px 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    height: 100px;
+    background: $color-white;
+    z-index: 2;
+    padding: 0 24px;
+    box-shadow: 8px 4px 4px $color-light-green;
+  }
+
+  &__body {
+    margin-top: 120px;
   }
 }
 </style>

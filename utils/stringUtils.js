@@ -27,9 +27,9 @@ export const isEventsPage = (path) => {
   return path === EVENTS_ROUTE
 }
 
-export const getImageContext = (icon) => {
+export const getImageContext = (image) => {
   const images = require.context('../assets/images', false, /\.png$/)
-  return images(`./${icon}.png`)
+  return images(`./${image}.png`)
 }
 
 export default {

@@ -1,50 +1,50 @@
 <template>
   <div class="register">
-    <h1>Register</h1>
-    <form
-      class="register__form"
+    <Form
       v-if="step === steps.register"
-      @submit.prevent="register"
+      title="Register"
+      footer-link="/login"
+      footer-label="Have an account? Login"
+      button-label="Register"
+      @submit="register"
     >
-      <input
-        v-model="registerForm.email"
-        type="email"
-        placeholder="Email"
-        class="form-control"
-      />
-      <input
-        v-model="registerForm.password"
-        type="password"
-        placeholder="Password"
-        class="form-control"
-      />
-      <button type="submit" class="highlight-button">Register</button>
-    </form>
-    <form
-      class="register__form"
+      <div slot="form-fields">
+        <b-form-input
+          v-model="registerForm.email"
+          type="email"
+          placeholder="Email"
+        />
+        <b-form-input
+          v-model="registerForm.password"
+          type="password"
+          placeholder="Password"
+        />
+      </div>
+    </Form>
+    <Form
       v-if="step === steps.confirm"
-      @submit.prevent="confirm"
+      title="Confirm"
+      footer-link="/login"
+      footer-label="Have an account? Login"
+      button-label="Confirm"
+      @submit="confirm"
     >
-      <input
-        v-model="confirmForm.email"
-        type="email"
-        placeholder="Email"
-        class="form-control"
-      />
-      <input
-        v-model="confirmForm.code"
-        placeholder="Code"
-        class="form-control"
-      />
-      <button type="submit" class="highlight-button">Confirm</button>
-    </form>
-    <nuxt-link to="login">Have an account? Login</nuxt-link>
+      <div slot="form-fields">
+        <b-form-input
+          v-model="confirmForm.email"
+          type="email"
+          placeholder="Email"
+        />
+        <b-form-input v-model="confirmForm.code" placeholder="Code" />
+      </div>
+    </Form>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 import { EVENTS_ROUTE } from '@/utils/constants'
+import Form from '@/layouts/Form'
 
 const steps = {
   register: 'REGISTER',
@@ -52,7 +52,8 @@ const steps = {
 }
 
 export default {
-  name: 'register',
+  name: 'Register',
+  components: { Form },
   data: () => ({
     steps: { ...steps },
     step: steps.register,
@@ -90,16 +91,4 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import '@/styles/events-app';
-.register {
-  max-width: 480px;
-  margin: auto;
-
-  &__form {
-    margin: 24px 0;
-    display: flex;
-    flex-direction: column;
-  }
-}
-</style>
+<style scoped></style>
