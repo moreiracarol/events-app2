@@ -2,7 +2,7 @@
   <div class="events-list">
     <div v-if="isEmptyScreen">No events to show</div>
     <div v-else>
-      <SortBy v-if="showAllEvents" @sortEvents="sortEvents" />
+      <SortBy v-if="showAllEvents" data-sort-events @sortEvents="sortEvents" />
       <Card
         v-for="(event, index) in eventsList"
         :key="index"

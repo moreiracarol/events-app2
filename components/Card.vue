@@ -9,8 +9,12 @@
         <div class="card__name" v-text="event.name"></div>
         <div class="card__price" v-text="event.price"></div>
         <div class="card__icons">
-          <img :src="getRedirectIcon" @click="redirectToEventPage" />
-          <img :src="getIcon" @click="saveFavorite" />
+          <img
+            data-icon-redirect
+            :src="getRedirectIcon"
+            @click="redirectToEventPage"
+          />
+          <img data-icon-add-favorite :src="getIcon" @click="saveFavorite" />
         </div>
       </b-col>
     </b-row>

@@ -2,12 +2,24 @@ import { Auth } from 'aws-amplify'
 
 export const state = () => ({
   isAuthenticated: false,
+  isRegistered: false,
+  isConfirmed: false,
+  authError: null,
   user: null
 })
 
 export const mutations = {
   setUser(state, user) {
     state.isAuthenticated = !!user
+  },
+  setRegister(state, isRegistered) {
+    state.isRegistered = isRegistered
+  },
+  setConfirmed(state, isConfirmed) {
+    state.isRegistered = isConfirmed
+  },
+  setAuthError(state, error) {
+    state.authError = error
   }
 }
 
@@ -21,21 +33,23 @@ export const actions = {
       commit('setUser', null)
     }
   },
-  async register(_, { email, password }) {
+  async register({ commit }, { email, password }) {
     try {
       await Auth.signUp({
         username: email,
         password
       })
+      commit('setRegister', true)
     } catch (e) {
-      console.log(e)
+      commit('setAuthError', e)
     }
   },
-  async confirmRegistration(_, { email, code }) {
+  async confirmRegistration({ commit }, { email, code }) {
     try {
       await Auth.confirmSignUp(email, code)
+      commit('setConfirmed', true)
     } catch (e) {
-      console.log(e)
+      commit('setAuthError', e)
     }
   },
   async login({ commit }, { email, password }) {
