@@ -6,7 +6,7 @@
     </div>
     <div class="view-layout__body">
       <b-button variant="secondary" data-favorites-button @click="goToPage">
-        {{ button }}
+        {{ buttonLabel }}
       </b-button>
       <slot name="content" />
     </div>
@@ -24,7 +24,7 @@ export default {
       type: String,
       required: true
     },
-    button: {
+    buttonLabel: {
       type: String,
       required: true
     }
@@ -60,10 +60,10 @@ export default {
     width: 100%;
     position: fixed;
     height: 100px;
-    background: $color1;
+    background: $color-white;
     z-index: 2;
     padding: 0 24px;
-    box-shadow: 8px 4px 4px $color2;
+    box-shadow: 8px 4px 4px $color-light-green;
   }
 
   &__body {

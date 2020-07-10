@@ -1,9 +1,10 @@
 $color-primary: #49c5b6;
+$color-primary-hover: #238e80;
 $color-secondary: #0e1574;
-$color1: #fff;
-$color2: #f4f7f6;
-$color3: #a6a6a6;
-$color4: #747474;
+$color-white: #fff;
+$color-light-green: #f4f7f6;
+$color-light-gray: #a6a6a6;
+$color-dark-gray: #747474;
 
 $max-content-size: 948px;
 
@@ -13,7 +14,7 @@ h1 {
   font-size: 48px;
   font-weight: 600;
   color: $color-secondary;
-  margin: 16px 8px;
+  margin: 16px 0;
 }
 
 input {
@@ -24,9 +25,25 @@ input {
 .btn-primary {
   background: $color-primary;
   border-color: $color-primary;
+
+  &:hover {
+    background: $color-primary-hover;
+  }
 }
 
 .btn-secondary {
   background: $color-secondary;
   border-color: $color-secondary;
+}
+
+.btn-text {
+  background: $color-light-green;
+  border-color: $color-light-green;
+  color: $color-primary;
+
+  &:hover {
+    background: $color-white;
+    border-color: $color-light-green;
+    color: $color-primary;
+  }
 }

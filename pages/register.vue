@@ -1,43 +1,50 @@
 <template>
   <div class="register">
-    <h1>Register</h1>
-    <b-form
+    <Form
       v-if="step === steps.register"
-      class="register__form"
-      @submit.prevent="register"
+      title="Register"
+      footer-link="/login"
+      footer-label="Have an account? Login"
+      button-label="Register"
+      @submit="register"
     >
-      <b-form-input
-        v-model="registerForm.email"
-        type="email"
-        placeholder="Email"
-      />
-      <b-form-input
-        v-model="registerForm.password"
-        type="password"
-        placeholder="Password"
-      />
-      <b-button type="submit" variant="primary">Register</b-button>
-    </b-form>
-    <b-form
+      <div slot="form-fields">
+        <b-form-input
+          v-model="registerForm.email"
+          type="email"
+          placeholder="Email"
+        />
+        <b-form-input
+          v-model="registerForm.password"
+          type="password"
+          placeholder="Password"
+        />
+      </div>
+    </Form>
+    <Form
       v-if="step === steps.confirm"
-      class="register__form"
-      @submit.prevent="confirm"
+      title="Confirm"
+      footer-link="/login"
+      footer-label="Have an account? Login"
+      button-label="Confirm"
+      @submit="confirm"
     >
-      <b-form-input
-        v-model="confirmForm.email"
-        type="email"
-        placeholder="Email"
-      />
-      <b-form-input v-model="confirmForm.code" placeholder="Code" />
-      <b-button type="submit" variant="primary">Confirm</b-button>
-    </b-form>
-    <nuxt-link to="login">Have an account? Login</nuxt-link>
+      <div slot="form-fields">
+        <b-form-input
+          v-model="confirmForm.email"
+          type="email"
+          placeholder="Email"
+        />
+        <b-form-input v-model="confirmForm.code" placeholder="Code" />
+      </div>
+    </Form>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 import { EVENTS_ROUTE } from '@/utils/constants'
+import Form from '@/layouts/Form'
 
 const steps = {
   register: 'REGISTER',
@@ -46,6 +53,7 @@ const steps = {
 
 export default {
   name: 'Register',
+  components: { Form },
   data: () => ({
     steps: { ...steps },
     step: steps.register,
@@ -83,14 +91,4 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import '@/styles/events-app';
-.register {
-  max-width: 480px;
-  margin: auto;
-
-  &__form {
-    margin: 16px 0;
-  }
-}
-</style>
+<style scoped></style>

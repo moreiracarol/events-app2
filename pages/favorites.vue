@@ -1,22 +1,22 @@
 <template>
-  <view-layout
+  <Page
     page-title="FAVORITES"
-    button="See all events"
+    button-label="See all events"
     @click="goToEvents"
   >
     <div slot="content">
       <EventsList />
     </div>
-  </view-layout>
+  </Page>
 </template>
 
 <script>
 import EventsList from '@/components/EventsList'
 import { EVENTS_ROUTE } from '@/utils/constants'
-import ViewLayout from '@/layouts/viewLayout'
+import Page from '@/layouts/Page'
 export default {
   name: 'Favorites',
-  components: { EventsList, ViewLayout },
+  components: { EventsList, Page },
   methods: {
     goToEvents() {
       this.$router.push(EVENTS_ROUTE)
@@ -25,6 +25,4 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import '@/styles/events-app';
-</style>
+<style scoped></style>

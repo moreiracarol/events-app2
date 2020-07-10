@@ -1,5 +1,5 @@
 <template>
-  <div class="sort-by">
+  <div class="sort-by ml-auto">
     <b-form-select
       v-model="selected"
       :options="options"
@@ -28,9 +28,10 @@ export default {
 
 <style scoped lang="scss">
 @import '@/styles/events-app';
+
 .sort-by {
-  max-width: 240px;
-  padding: 16px 0;
+  width: 240px;
+  padding-top: 8px;
   color: $color-secondary;
 }
 </style>

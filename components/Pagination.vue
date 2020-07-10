@@ -51,13 +51,13 @@ export default {
   .active,
   &__item:hover {
     background-color: $color-secondary;
-    color: $color2;
+    color: $color-light-green;
   }
 
   .disabled,
   .disabled:hover {
-    color: $color3;
-    background: $color1;
+    color: $color-light-gray;
+    background: $color-white;
     cursor: not-allowed;
   }
 }
@@ -65,6 +65,6 @@ export default {
 .active,
 .pagination__item:hover {
   background-color: $color-secondary;
-  color: $color2;
+  color: $color-light-green;
 }
 </style>

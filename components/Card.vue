@@ -1,6 +1,6 @@
 <template>
   <b-card no-body class="overflow-hidden">
-    <b-row no-gutters style="width: 100%">
+    <b-row no-gutters class="card__row">
       <b-col md="4">
         <b-img :src="event.image" fluid-grow rounded />
       </b-col>
@@ -63,9 +63,14 @@ export default {
   margin: 8px 0;
 
   &:hover {
-    background: $color1;
-    border: solid 2px $color2;
+    background: $color-white;
+    border: solid 2px $color-light-green;
     color: $color-secondary;
+  }
+
+  &__row {
+    align-items: center;
+    width: 100%;
   }
 
   &__content {
@@ -92,12 +97,11 @@ export default {
   &__price {
     font-style: italic;
     padding: 4px;
-    color: $color4;
+    color: $color-dark-gray;
     font-size: 12px;
 
     @media (min-width: $breakpoint-tablet) {
       font-size: 16px;
-      padding: 8px 0;
     }
   }
 
@@ -112,7 +116,7 @@ export default {
     }
 
     @media (min-width: $breakpoint-tablet) {
-      margin: 16px;
+      margin: 0 16px;
     }
   }
 }
