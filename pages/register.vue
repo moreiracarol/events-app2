@@ -62,7 +62,7 @@ export default {
       password: ''
     },
     confirmForm: {
-      mail: '',
+      email: '',
       code: ''
     }
   }),
@@ -77,14 +77,14 @@ export default {
       authConfirmRegistration: 'auth/confirmRegistration',
       authLogin: 'auth/login'
     }),
-    async register() {
-      await this.authRegister(this.registerForm)
+    register() {
+      this.authRegister(this.registerForm)
       this.confirmForm.email = this.registerForm.email
       this.step = this.steps.confirm
     },
-    async confirm() {
-      await this.authConfirmRegistration(this.confirmForm)
-      await this.authLogin(this.registerForm)
+    confirm() {
+      this.authConfirmRegistration(this.confirmForm)
+      this.authLogin(this.registerForm)
       this.$router.push(EVENTS_ROUTE)
     }
   }

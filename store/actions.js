@@ -22,7 +22,7 @@ export default {
     context.commit('updateFavoritesList', event)
   },
   getFavorites: (context) => {
-    const events = context.getters.favorites
+    const events = context.getters?.favorites
     context.commit('saveEvents', events)
   },
   nuxtServerInit() {}
