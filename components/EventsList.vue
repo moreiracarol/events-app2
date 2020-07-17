@@ -59,18 +59,18 @@ export default {
       return this.showAllEvents && this.totalPages > 1
     }
   },
-  async created() {
-    await this.loadList()
+  created() {
+    this.loadList()
   },
   methods: {
     ...mapActions({
       getEvents: 'getEvents',
       getFavorites: 'getFavorites'
     }),
-    async loadList(sort) {
+    loadList(sort) {
       this.showAllEvents
-        ? await this.getEvents({ page: this.page, sort })
-        : await this.getFavorites()
+        ? this.getEvents({ page: this.page, sort })
+        : this.getFavorites()
       this.totalPages = this.pages
       this.eventsList = this.events
     },

@@ -40,8 +40,8 @@ export default {
     ...mapActions({
       authLogin: 'auth/login'
     }),
-    async login() {
-      await this.authLogin({ email: this.email, password: this.password })
+    login() {
+      this.authLogin({ email: this.email, password: this.password })
       this.$router.push(EVENTS_ROUTE)
     }
   }
